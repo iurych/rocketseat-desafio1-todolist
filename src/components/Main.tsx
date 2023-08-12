@@ -1,5 +1,6 @@
 import { MainStyled } from '../styles/main';
 import Clipboard from '../assets/Clipboard.svg';
+import { Task } from './Task';
 
 export function Main() {
   return (
@@ -20,10 +21,7 @@ export function Main() {
       </header>
       <div className='box-tasks'>
         <ul>
-          <picture>
-            <img src={Clipboard} alt='clipboard' />
-          </picture>
-          <li></li>
+          <Task />
         </ul>
       </div>
     </MainStyled>

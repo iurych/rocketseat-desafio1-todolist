@@ -1,25 +1,12 @@
-import Logo from './assets/Logo.svg';
-import { BsPlusCircle } from 'react-icons/bs';
-import { Header } from './styles/header';
-import { TaskBar } from './styles/taskBar';
+import { Header } from './components/Header';
 import { Main } from './components/Main';
+import { TaskBar } from './components/TaskBar';
 
 function App() {
   return (
     <>
-      <Header>
-        <img src={Logo} alt='logo' />
-      </Header>
-      <TaskBar role='div'>
-        <form action=''>
-          <input type='text' placeholder='Adicionar nova tarefa...' />
-          <button type='submit'>
-            Criar
-            <BsPlusCircle size={16} />
-          </button>
-        </form>
-      </TaskBar>
-
+      <Header />
+      <TaskBar />
       <Main />
     </>
   );

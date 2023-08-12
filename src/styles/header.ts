@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 
-export const Header = styled.header`
+export const HeaderStyles = styled.header`
   img {
     height: 48px;
     width: 126px;
@@ -8,7 +8,6 @@ export const Header = styled.header`
 
   background-color: var(--color-gray-700);
 
-  /* height: 30%; */
   height: 212px;
 
   display: flex;

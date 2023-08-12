@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 
-export const TaskBar = styled.div`
+export const TaskBarStyles = styled.div`
   position: absolute;
   top: 182px;
   left: calc((100% - 736px) / 2);
@@ -18,7 +18,8 @@ export const TaskBar = styled.div`
 
       background-color: var(--color-gray-500);
 
-      color: var(--color-gray-300);
+      /* color: var(--color-gray-300); */
+      color: #5e60ce;
 
       font-size: 1rem;
       font-weight: 400;
@@ -31,16 +32,12 @@ export const TaskBar = styled.div`
 
       &:focus {
         border: 1px solid var(--color-purpledark);
+        color: linear-gradient(to right, #8284fa, #5e60ce, #4ea8de, #1d6e9f);
       }
 
       &::placeholder {
-        background-image: linear-gradient(
-          to right,
-          #8284fa,
-          #5e60ce,
-          #4ea8de,
-          #1d6e9f
-        );
+        background-color: var(--color-gray-300);
+
         background-clip: text;
         -webkit-background-clip: text;
         color: transparent;

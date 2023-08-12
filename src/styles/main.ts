@@ -58,12 +58,46 @@ export const MainStyled = styled.main`
     align-items: center;
     justify-content: center;
 
-    height: 200px;
+    height: auto;
     width: inherit;
 
     margin-top: 20px;
 
     border-top: solid 1px var(--color-gray-400);
     border-radius: var(--base-radius);
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .empty-task {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      margin-top: 100px;
+
+      picture {
+        margin: 16px 0px;
+      }
+
+      p,
+      span {
+        color: var(--color-gray-300);
+      }
+
+      p {
+        font-weight: 700;
+      }
+
+      span {
+        font-weight: 400;
+      }
+    }
   }
 `;

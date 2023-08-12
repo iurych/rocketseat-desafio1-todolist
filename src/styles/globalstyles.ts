@@ -6,7 +6,7 @@ export const GlobalStyles = createGlobalStyle`
          /* Grey Scale Palette */
         --color-gray-100: #f2f2f2;
         --color-gray-200: #d9d9d9;
-        --color-gray-300: #7f7f7f;
+        --color-gray-300: #808080;
         --color-gray-400: #333333;
         --color-gray-500: #262626;
         --color-gray-600: #191919;
