@@ -13,7 +13,7 @@ export const Text = ({ isCheck }: iCheck) => {
     <>
       <StyledChecked
         isCheck={isCheck}
-        variant={isCheck === 'checked' ? 'checked' : 'unchecked'}
+        variant={isCheck === 'checked' ? 'unchecked' : 'checked'}
       >
         {' '}
         checado{' '}

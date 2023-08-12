@@ -1,5 +1,4 @@
 import { MainStyled } from '../styles/main';
-import Clipboard from '../assets/Clipboard.svg';
 import { Task } from './Task';
 
 export function Main() {

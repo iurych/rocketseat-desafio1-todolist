@@ -2,11 +2,11 @@ import { ListTaksStyles } from '../styles/listTaskStyles';
 import trash from '../assets/trash.svg';
 import * as Checkbox from '@radix-ui/react-checkbox';
 import { CheckIcon } from '@radix-ui/react-icons';
-import { MouseEvent, useEffect, useState } from 'react';
+import { MouseEvent, useState } from 'react';
 import { Text } from './Text';
 
 export function Task() {
-  const [isCheck, setIsCheck] = useState<string | undefined>('');
+  const [isCheck, setIsCheck] = useState<string | undefined>('checked');
 
   const handleClickTask = (e: MouseEvent<HTMLButtonElement>) => {
     const checker = e.target as HTMLElement;
