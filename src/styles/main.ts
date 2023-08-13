@@ -67,6 +67,7 @@ export const MainStyled = styled.main`
     border-radius: var(--base-radius);
 
     ul {
+      padding: 30px;
       display: flex;
       flex-direction: column;
       align-items: center;

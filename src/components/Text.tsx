@@ -1,23 +1,10 @@
 import { StyledChecked } from '../styles/text';
 
-export interface iCheck {
-  isCheck?: string;
+export interface iText {
+  checked: boolean;
+  title?: string;
 }
 
-export interface iCheckProps extends iCheck {
-  variant: string;
-}
-
-export const Text = ({ isCheck }: iCheck) => {
-  return (
-    <>
-      <StyledChecked
-        isCheck={isCheck}
-        variant={isCheck === 'checked' ? 'checked' : 'unchecked'}
-      >
-        {' '}
-        checado{' '}
-      </StyledChecked>
-    </>
-  );
-};
+export const Text = ({ checked, title }: iText) => (
+  <StyledChecked checked={checked}> {title} </StyledChecked>
+);

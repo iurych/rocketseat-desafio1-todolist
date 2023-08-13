@@ -1,8 +1,16 @@
+import { tTask } from '../App';
 import { MainStyled } from '../styles/main';
-import Clipboard from '../assets/Clipboard.svg';
+import { EmptyTask } from './Empty';
 import { Task } from './Task';
+import { v4 as uuidv4 } from 'uuid';
 
-export function Main() {
+interface iMainProps {
+  setChecked: React.Dispatch<React.SetStateAction<boolean>>;
+  tasks: Array<tTask>;
+  checked: boolean;
+}
+
+export function Main({ tasks, setChecked, checked }: iMainProps) {
   return (
     <MainStyled>
       <header>
@@ -21,7 +29,18 @@ export function Main() {
       </header>
       <div className='box-tasks'>
         <ul>
-          <Task />
+          {tasks.length > 0 ? (
+            tasks.map((task) => (
+              <Task
+                key={uuidv4()}
+                title={task.title}
+                checked={checked}
+                setChecked={setChecked}
+              />
+            ))
+          ) : (
+            <EmptyTask />
+          )}
         </ul>
       </div>
     </MainStyled>

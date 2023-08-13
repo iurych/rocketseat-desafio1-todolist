@@ -1,27 +1,38 @@
-import { useState, ChangeEvent, FormEvent } from 'react';
-
+import { FormEvent } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import { BsPlusCircle } from 'react-icons/bs';
 import { TaskBarStyles } from '../styles/taskBarStyles';
+import { useState } from 'react';
+import { tTask } from '../App';
 
-export function TaskBar() {
-  const [todo, setNewTodo] = useState([]);
+type tTaskProps = {
+  tasks: tTask[];
+  checked: boolean;
+  setTasks: React.Dispatch<React.SetStateAction<tTask[]>>;
+};
+
+export function TaskBar({ setTasks, checked }: tTaskProps) {
+  const [taskValue, setTaskValue] = useState('tarefa padrão');
 
   const handleCreateNewTodo = (e: FormEvent) => {
     e.preventDefault();
+
+    const newTask = {
+      id: uuidv4(),
+      title: taskValue,
+      isCompleted: checked,
+    };
+
+    setTasks((prev) => [...prev, newTask]);
   };
 
-  const handleNewTodo = (e: ChangeEvent<HTMLInputElement>) => {
-    
-
-    setNewTodo(e.target.value);
-  };
   return (
     <TaskBarStyles role='div'>
-      <form onSubmit={handleCreateNewTodo}>
+      <form onSubmit={(e) => handleCreateNewTodo(e)}>
         <input
           type='text'
           placeholder='Adicionar nova tarefa...'
-          onChange={(e) => handleNewTodo(e)}
+          onChange={(e) => setTaskValue(e.target.value)}
         />
         <button type='submit'>
           Criar
