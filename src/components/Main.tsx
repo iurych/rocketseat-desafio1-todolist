@@ -5,12 +5,11 @@ import { Task } from './Task';
 import { v4 as uuidv4 } from 'uuid';
 
 interface iMainProps {
-  setChecked: React.Dispatch<React.SetStateAction<boolean>>;
   tasks: Array<tTask>;
-  checked: boolean;
+  setTasks: React.Dispatch<React.SetStateAction<tTask[]>>;
 }
 
-export function Main({ tasks, setChecked, checked }: iMainProps) {
+export function Main({ tasks, setTasks }: iMainProps) {
   return (
     <MainStyled>
       <header>
@@ -34,8 +33,8 @@ export function Main({ tasks, setChecked, checked }: iMainProps) {
               <Task
                 key={uuidv4()}
                 title={task.title}
-                checked={checked}
-                setChecked={setChecked}
+                isCompleted={task.isCompleted}
+                id={(task.id = uuidv4())}
               />
             ))
           ) : (

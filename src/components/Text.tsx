@@ -1,10 +1,10 @@
 import { StyledChecked } from '../styles/text';
 
 export interface iText {
-  checked: boolean;
+  isCompleted: boolean;
   title?: string;
 }
 
-export const Text = ({ checked, title }: iText) => (
-  <StyledChecked checked={checked}> {title} </StyledChecked>
-);
+export const Text = ({ isCompleted, title }: iText) => {
+  return <StyledChecked isCompleted={isCompleted}> {title} </StyledChecked>;
+};

@@ -10,15 +10,13 @@ export type tTask = {
 };
 
 function App() {
-  
   const [tasks, setTasks] = useState<tTask[]>([]);
-  const [checked, setChecked] = useState(false);
 
   return (
     <>
       <Header />
-      <TaskBar tasks={tasks} setTasks={setTasks} checked={checked} />
-      <Main tasks={tasks} checked={checked} setChecked={setChecked} />
+      <TaskBar tasks={tasks} setTasks={setTasks} />
+      <Main tasks={tasks} setTasks={setTasks} />
     </>
   );
 }

@@ -9,7 +9,7 @@ export const StyledChecked = styled.p<iText>`
   color: var(--color-gray-200);
 
   ${(props) => {
-    switch (props.checked) {
+    switch (props.isCompleted) {
       default:
       case false:
         return css`

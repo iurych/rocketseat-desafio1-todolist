@@ -7,11 +7,11 @@ import { tTask } from '../App';
 
 type tTaskProps = {
   tasks: tTask[];
-  checked: boolean;
+
   setTasks: React.Dispatch<React.SetStateAction<tTask[]>>;
 };
 
-export function TaskBar({ setTasks, checked }: tTaskProps) {
+export function TaskBar({ setTasks, tasks }: tTaskProps) {
   const [taskValue, setTaskValue] = useState('tarefa padrão');
 
   const handleCreateNewTodo = (e: FormEvent) => {
@@ -20,10 +20,10 @@ export function TaskBar({ setTasks, checked }: tTaskProps) {
     const newTask = {
       id: uuidv4(),
       title: taskValue,
-      isCompleted: checked,
+      isCompleted: false,
     };
 
-    setTasks((prev) => [...prev, newTask]);
+    setTasks([...tasks, newTask]);
   };
 
   return (
