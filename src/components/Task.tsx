@@ -4,7 +4,7 @@ import * as Checkbox from '@radix-ui/react-checkbox';
 import { CheckIcon } from '@radix-ui/react-icons';
 import { Text } from './Text';
 import { v4 as uuidv4 } from 'uuid';
-// import { useState } from 'react';
+
 
 interface iTaskProps {
   checked: boolean;
