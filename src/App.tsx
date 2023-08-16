@@ -11,12 +11,13 @@ export type tTask = {
 
 function App() {
   const [tasks, setTasks] = useState<tTask[]>([]);
+  const [done, setDone] = useState(0);
 
   return (
     <>
       <Header />
       <TaskBar tasks={tasks} setTasks={setTasks} />
-      <Main tasks={tasks} setTasks={setTasks} />
+      <Main tasks={tasks} setTasks={setTasks} setDone={setDone} done={done} />
     </>
   );
 }

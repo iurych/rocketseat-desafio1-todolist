@@ -4,19 +4,38 @@ import * as Checkbox from '@radix-ui/react-checkbox';
 import { CheckIcon } from '@radix-ui/react-icons';
 import { Text } from './Text';
 import { useState } from 'react';
+import { tTask } from '../App';
 
 interface iTaskProps {
   isCompleted: boolean;
   title?: string;
   id: string;
+  tasks: tTask[];
+  setTasks: React.Dispatch<React.SetStateAction<tTask[]>>;
+  setDone: React.Dispatch<React.SetStateAction<number>>;
+  done: number;
 }
 
-export function Task({ isCompleted, title, id }: iTaskProps) {
+export function Task({
+  title,
+  id,
+  tasks,
+  setTasks,
+  setDone,
+  done,
+}: iTaskProps) {
   const [checked, setChecked] = useState<boolean>(false);
+
   const handleOnChecked = (value: boolean) => {
-    isCompleted = value;
+    value ? setDone((prev) => ++prev) : setDone((prev) => --prev);
 
     setChecked(value);
+  };
+
+  const remove = () => {
+    const remainingTasks = tasks.filter((task) => task.id !== id);
+    setTasks([...remainingTasks]);
+    done > 0 && setDone((prev) => --prev);
   };
 
   return (
@@ -32,9 +51,9 @@ export function Task({ isCompleted, title, id }: iTaskProps) {
         </Checkbox.Indicator>
       </Checkbox.Root>
 
-      <Text isCompleted={isCompleted} title={title} />
+      <Text isCompleted={checked} title={title} />
 
-      <img src={trash} alt='trash' />
+      <img src={trash} alt='trash' onClick={remove} />
     </ListTaksStyles>
   );
 }
