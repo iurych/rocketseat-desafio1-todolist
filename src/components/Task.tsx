@@ -29,7 +29,7 @@ iTaskProps) {
   const handleOnChecked = (value: boolean | string) => {
     value ? setDone((prev) => ++prev) : setDone((prev) => --prev);
 
-    setChecked(value as boolean);
+    typeof value === 'boolean' && setChecked(value);
   };
 
   const remove = () => {
