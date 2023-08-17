@@ -3,7 +3,7 @@ import trash from '../assets/trash.svg';
 import * as Checkbox from '@radix-ui/react-checkbox';
 import { CheckIcon } from '@radix-ui/react-icons';
 import { Text } from './Text';
-import { useState } from 'react';
+import { useState, MouseEvent } from 'react';
 import { tTask } from '../App';
 
 interface iTaskProps {
@@ -22,20 +22,21 @@ export function Task({
   tasks,
   setTasks,
   setDone,
-  done,
+  // done,
 }: iTaskProps) {
   const [checked, setChecked] = useState<boolean>(false);
 
-  const handleOnChecked = (value: boolean) => {
+  const handleOnChecked = (value: boolean | string) => {
     value ? setDone((prev) => ++prev) : setDone((prev) => --prev);
 
-    setChecked(value);
+    setChecked(value as boolean);
   };
 
   const remove = () => {
     const remainingTasks = tasks.filter((task) => task.id !== id);
     setTasks([...remainingTasks]);
-    done > 0 && setDone((prev) => --prev);
+
+    checked && setDone((prev) => --prev);
   };
 
   return (
@@ -44,7 +45,7 @@ export function Task({
         className='CheckboxRoot'
         id='c1'
         checked={checked}
-        onCheckedChange={(value) => handleOnChecked(value as boolean)}
+        onCheckedChange={(value) => handleOnChecked(value)}
       >
         <Checkbox.Indicator className='CheckboxIndicator'>
           <CheckIcon />
