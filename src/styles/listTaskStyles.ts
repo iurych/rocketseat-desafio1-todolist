@@ -1,4 +1,5 @@
 import { styled } from 'styled-components';
+import trash from '../assets/trash.svg';
 
 export const ListTaksStyles = styled.li`
   min-width: 736px;
@@ -34,5 +35,19 @@ export const ListTaksStyles = styled.li`
 
   img:hover {
     cursor: pointer;
+    color: red;
+  }
+`;
+
+export const TrashIcon = styled.div`
+  width: 40px;
+  height: 40px;
+  background-image: url(${trash});
+  background-size: cover;
+  transition: fill 0.3s;
+
+  &:hover {
+    cursor: pointer;
+    filter: brightness(2);
   }
 `;

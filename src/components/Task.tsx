@@ -1,4 +1,4 @@
-import { ListTaksStyles } from '../styles/listTaskStyles';
+import { ListTaksStyles, TrashIcon } from '../styles/listTaskStyles';
 import trash from '../assets/trash.svg';
 import * as Checkbox from '@radix-ui/react-checkbox';
 import { CheckIcon } from '@radix-ui/react-icons';
@@ -22,8 +22,8 @@ export function Task({
   tasks,
   setTasks,
   setDone,
-  // done,
-}: iTaskProps) {
+}: // done,
+iTaskProps) {
   const [checked, setChecked] = useState<boolean>(false);
 
   const handleOnChecked = (value: boolean | string) => {
@@ -54,7 +54,7 @@ export function Task({
 
       <Text isCompleted={checked} title={title} />
 
-      <img src={trash} alt='trash' onClick={remove} />
+      <TrashIcon onClick={remove} />
     </ListTaksStyles>
   );
 }
