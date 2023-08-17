@@ -18,6 +18,7 @@ export const StyledChecked = styled.p<iText>`
       case true:
         return css`
           text-decoration: line-through;
+          color: var(--color-gray-300);
         `;
     }
   }}

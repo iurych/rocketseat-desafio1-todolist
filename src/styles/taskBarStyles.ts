@@ -65,7 +65,12 @@ export const TaskBarStyles = styled.div`
 
       transition: 0.7s;
 
-      &:hover {
+      &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+
+      &:not(:disabled):hover {
         background-color: var(--color-blue);
       }
     }

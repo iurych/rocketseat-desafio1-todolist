@@ -13,7 +13,7 @@ export const MainStyled = styled.main`
   padding-top: 132px;
 
   header {
-    min-width: 737px;
+    min-width: 100%;
     display: flex;
     justify-content: space-between;
 
@@ -40,7 +40,7 @@ export const MainStyled = styled.main`
 
         border-radius: 50%;
 
-        width: 25px;
+        width: fit-content;
         height: 20px;
 
         align-items: center;
