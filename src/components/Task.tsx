@@ -1,9 +1,8 @@
 import { ListTaksStyles, TrashIcon } from '../styles/listTaskStyles';
-import trash from '../assets/trash.svg';
 import * as Checkbox from '@radix-ui/react-checkbox';
 import { CheckIcon } from '@radix-ui/react-icons';
 import { Text } from './Text';
-import { useState, MouseEvent } from 'react';
+import { useState } from 'react';
 import { tTask } from '../App';
 
 interface iTaskProps {
@@ -22,7 +21,7 @@ export function Task({
   tasks,
   setTasks,
   setDone,
-}: // done,
+}: 
 iTaskProps) {
   const [checked, setChecked] = useState<boolean>(false);
 
